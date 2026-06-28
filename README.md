@@ -2,8 +2,7 @@
 
 ## TL;DR
 
-Ibanez only specifies some string heights at 14th fret and tools are limited to fixed mm/inch increments.  
-This tool fills missing values and automatically chooses the mm or inch gauge that produces the smallest error.
+You can adjust your string heights above 14th fret using the following table.
 
 | String        | Height  | Error  |
 |---------------|---------|--------|
