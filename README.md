@@ -18,7 +18,7 @@ This tool fills missing values and automatically chooses the mm or inch gauge th
 
 ## Problem
 
-Ibanez provides string height specs only for selected strings (1st, 6th, 7th, 8th).  
+[Ibanez provides](maintenance_en.pdf) string height specs only for selected strings (1st, 6th, 7th, 8th).  
 The remaining values must be inferred.
 
 Furthermore, in practice, adjustments are limited to:
