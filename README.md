@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-You can adjust your string heights above 14th fret using the following table for a balanced feel.
+You can adjust your string heights above the 14th fret using the following table for a balanced feel.
 
 | String        | Height  | Error  |
 |---------------|---------|--------|
