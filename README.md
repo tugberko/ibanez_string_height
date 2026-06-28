@@ -1,4 +1,4 @@
-# 🎸 String Height Optimization for Ibanez Guitars
+# String Height Optimization for Ibanez Guitars
 
 ## TL;DR
 
