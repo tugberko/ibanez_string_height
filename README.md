@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-Ibanez only specifies some string heights, and real-world adjustments are limited to fixed mm/inch increments.  
+Ibanez only specifies some string heights and tools are limited to fixed mm/inch increments.  
 This tool fills missing values and automatically chooses the mm or inch gauge that produces the smallest error.
 
 | String        | Height  | Error  |
