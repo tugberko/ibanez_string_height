@@ -1,4 +1,5 @@
 from numbers import Number
+
 import numpy as np
 import pandas as pd
 
@@ -20,53 +21,46 @@ def round_to_nearest_multiple_of(value: pd.Series | Number, step: Number) -> pd.
 
 
 # This is what Ibanez tells us
-df = pd.DataFrame({
+strings_df = pd.DataFrame({
     "string": [1, 2, 3, 4, 5, 6, 7, 8],
     "height_low_mm": [1.5, None, None, None, None, 2.0, 2.2, 2.4],
     "height_hi_mm": [1.7, None, None, None, None, 2.2, 2.4, 2.6]
 }).set_index("string")
 
-
 # Interpolate the mising values
-df = df.interpolate(method="index")
-
-
+strings_df = strings_df.interpolate(method="index")
 
 # Perform unit conversions
-df["height_low_inch"] = df["height_low_mm"] * MM_TO_INCH
-df["height_hi_inch"] = df["height_hi_mm"] * MM_TO_INCH
+strings_df["height_low_inch"] = strings_df["height_low_mm"] * MM_TO_INCH
+strings_df["height_hi_inch"] = strings_df["height_hi_mm"] * MM_TO_INCH
 
-df["height_mm_avg"] = df[["height_low_mm", "height_hi_mm"]].mean(axis=1)
-df["height_inch_avg"] = df[["height_low_inch", "height_hi_inch"]].mean(axis=1)
-
+strings_df["height_mm_avg"] = strings_df[["height_low_mm", "height_hi_mm"]].mean(axis=1)
+strings_df["height_inch_avg"] = strings_df[["height_low_inch", "height_hi_inch"]].mean(axis=1)
 
 # Rounding to available gauges
-df["nearest_mm"] = round_to_nearest_multiple_of(df["height_mm_avg"], 0.25)
-df["nearest_inch"] = round_to_nearest_multiple_of(df["height_inch_avg"], 0.01)
-
+strings_df["nearest_mm"] = round_to_nearest_multiple_of(strings_df["height_mm_avg"], 0.25)
+strings_df["nearest_inch"] = round_to_nearest_multiple_of(strings_df["height_inch_avg"], 0.01)
 
 # Error calculation
 eps = 1e-12
 
-df["error_mm_rel"] = (
-    (df["height_mm_avg"] - df["nearest_mm"]).abs()
-    / (df["height_mm_avg"].abs() + eps)
+strings_df["error_mm_rel"] = (
+        (strings_df["height_mm_avg"] - strings_df["nearest_mm"]).abs()
+        / (strings_df["height_mm_avg"].abs() + eps)
 )
 
-df["error_inch_rel"] = (
-    (df["height_inch_avg"] - df["nearest_inch"]).abs()
-    / (df["height_inch_avg"].abs() + eps)
+strings_df["error_inch_rel"] = (
+        (strings_df["height_inch_avg"] - strings_df["nearest_inch"]).abs()
+        / (strings_df["height_inch_avg"].abs() + eps)
 )
 
-# ----------------------------
 # Decision logic (vectorized)
-# ----------------------------
-use_inch = df["error_inch_rel"] < df["error_mm_rel"]
+use_inch = strings_df["error_inch_rel"] < strings_df["error_mm_rel"]
 
-df["gauge_to_be_used"] = np.where(use_inch, "INCH", "MM")
-df["final_height"] = np.where(use_inch, df["nearest_inch"], df["nearest_mm"])
+strings_df["gauge_to_be_used"] = np.where(use_inch, "INCH", "MM")
+strings_df["final_height"] = np.where(use_inch, strings_df["nearest_inch"], strings_df["nearest_mm"])
 
-df["final_error_rel"] = np.minimum(df["error_inch_rel"], df["error_mm_rel"])
-df["final_error_pct"] = df["final_error_rel"] * 100
+strings_df["final_error_rel"] = np.minimum(strings_df["error_inch_rel"], strings_df["error_mm_rel"])
+strings_df["final_error_pct"] = strings_df["final_error_rel"] * 100
 
-print(df)
+print(strings_df)
