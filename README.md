@@ -16,8 +16,6 @@ This tool fills missing values and automatically chooses the mm or inch gauge th
 | 7             | 0.09″   | 0.61%  |
 | 8             | 2.5mm   | 0%     |
 
----
-
 ## Problem
 
 Ibanez provides string height specs only for selected strings (1st, 6th, 7th, 8th).  
@@ -32,7 +30,7 @@ Furthermore, in practice, adjustments are limited to:
 
 So exact target heights usually cannot be set directly.
 
----
+
 
 ## Solution
 
@@ -44,7 +42,7 @@ This project estimates missing string heights and finds the closest achievable s
 4. Comparing both systems using **relative error**
 5. Selecting the gauge (mm or inch) with the lowest error
 
----
+
 
 ## Key Idea
 
@@ -59,7 +57,7 @@ Then choose the system that minimizes:
 
 Final error is reported as a percentage.
 
----
+
 
 ## Result
 
@@ -69,7 +67,6 @@ The output provides:
 - Adjusted string height
 - Final approximation error (%)
 
----
 
 ## Why it works
 
