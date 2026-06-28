@@ -23,7 +23,7 @@ This tool fills missing values and automatically chooses the mm or inch gauge th
 Ibanez provides string height specs only for selected strings (1st, 6th, 7th, 8th).  
 The remaining values must be inferred.
 
-In practice, adjustments are limited to:
+Furthermore, in practice, adjustments are limited to:
 
 - 0.25 mm steps (metric gauge)
 - 0.01 inch steps (imperial gauge)
