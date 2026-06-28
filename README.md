@@ -4,20 +4,17 @@
 
 Ibanez only specifies some string heights, and real-world adjustments are limited to fixed mm/inch increments.  
 This tool fills missing values and automatically chooses the mm or inch gauge that produces the smallest error.
-
 <div align="center">
-
-| String | Height | Error |
-|--------|--------|--------|
-| 1 (High E) | 0.06″ | 4.75% |
-| 2 | 1.75 mm | 2.94% |
-| 3 | 0.07″ | 1.22% |
-| 4 | 2 mm | 5.26% |
-| 5 | 2 mm | 0.00% |
-| 6 (Low E) | 0.08″ | 3.23% |
-| 7 | 0.09″ | 0.61% |
-| 8 | 2.5 mm | 0.00% |
-
+| String        | Height  | Error  |
+|---------------|---------|--------|
+| 1 (High E)    | 0.06″   | 4.75%  |
+| 2             | 1.75mm  | 2.94%  |
+| 3             | 0.07″   | 1.22%  |
+| 4             | 2mm     | 5.26%  |
+| 5             | 2mm     | 0%     |
+| 6 (Low E)     | 0.08″   | 3.23%  |
+| 7             | 0.09″   | 0.61%  |
+| 8             | 2.5mm   | 0%     |
 </div>
 ---
 
