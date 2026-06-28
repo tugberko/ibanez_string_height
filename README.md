@@ -23,7 +23,7 @@ The remaining values must be inferred.
 Furthermore, in practice, adjustments are limited to:
 
 - 0.25 mm steps (metric gauge)
-- 0.01 inch steps (imperial gauge)
+- 0.010 inch steps (imperial gauge)
 
 ![String action ruler](string_action_ruler.jpg)
 
