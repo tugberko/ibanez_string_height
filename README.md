@@ -27,7 +27,7 @@ In practice, adjustments are limited to:
 
 - 0.25 mm steps (metric gauge)
 - 0.01 inch steps (imperial gauge)
-- 
+
 ![String action ruler](string_action_ruler.jpg)
 
 So exact target heights usually cannot be set directly.
