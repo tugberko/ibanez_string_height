@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-You can adjust your string heights above the 14th fret using the following table for a balanced feel.
+Use the table below to adjust string heights above the 14th fret for a balanced setup following Ibanez specifications. These values are intended as reference guidelines rather than strict requirements.
 
 | String        | Height  | Error  |
 |---------------|---------|--------|
